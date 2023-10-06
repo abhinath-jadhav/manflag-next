@@ -5,7 +5,7 @@ const Personal = () => {
   return (
     <div className="flex gap-5 items-center  justify-center h-screen">
       <div className="text-center">
-        <p>Personal</p>
+        <p className="text-3xl">Personal</p>
       </div>
     </div>
   );
