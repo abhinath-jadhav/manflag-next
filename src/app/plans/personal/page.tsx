@@ -3,8 +3,10 @@ import React from "react";
 
 const Personal = () => {
   return (
-    <div className=" items-center flex flex-wrap justify-evenly">
-      <Princing />
+    <div className="flex gap-5 items-center  justify-center h-screen">
+      <div className="text-center">
+        <p>Personal</p>
+      </div>
     </div>
   );
 };

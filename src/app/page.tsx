@@ -20,7 +20,7 @@ export default function Home() {
 
             <div className="mt-12">
               <Link
-                className="border rounded-xl text-2xl p-4  bg-orange-400 border-orange-400 font-semibold"
+                className="rounded-xl text-2xl p-4 bg-orange-400 hover:bg-slate-50 hover:text-slate-900 font-semibold"
                 href={"/plans"}
               >
                 Check Plans
