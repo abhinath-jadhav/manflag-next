@@ -7,9 +7,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     <BackroundImg img={img} className="">
       <Container>
         <Navbar />
-        <div className="h-screen flex justify-center ">
-          <Feature />
-        </div>
+        {children}
       </Container>
     </BackroundImg>
   );

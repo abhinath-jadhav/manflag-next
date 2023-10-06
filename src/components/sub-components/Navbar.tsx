@@ -15,8 +15,8 @@ const Navbar = () => {
 
   return (
     <Container>
-      <div className="fixed top-0 left-0 right-0 max-w-[1440px] mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:max-w-[68%] h-[80px] p-2">
+      <div className="fixed top-0 left-0 right-0 max-w-[1440px] mx-auto bg-slate-950 lg:bg-opacity-0">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:max-w-[68%] h-[100px] p-2">
           <div className="w-[120px]">
             <Image src={Logo} alt="Logo" />
           </div>
