@@ -22,14 +22,11 @@ const Navbar = () => {
           </div>
           <div className="flex justify-center gap-3 lg:gap-7 text-lg font-medium lg:font-normal lg:text-2xl ">
             {navMenu.map((nav, index) => (
-              <div key={index} className="hover:text-red-400">
+              <div key={index} className="hover:text-orange-400">
                 <Link href={nav.ref}>{nav.name}</Link>
               </div>
             ))}
           </div>
-          {/* <div>
-            <button>logIn</button>
-          </div> */}
         </div>
       </div>
     </Container>

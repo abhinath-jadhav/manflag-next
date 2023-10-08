@@ -21,6 +21,9 @@ const PriceCard = ({
           <button className="text-lg md:text-xl font-semibold border bg-slate-50 text-slate-900 rounded-full px-4 py-2 hover:bg-orange-400 hover:text-slate-50 hover:border-orange-400">
             Inquire Now
           </button>
+          <button className="text-lg md:text-xl font-semibold border bg-slate-50 text-slate-900 rounded-full px-4 py-2 hover:bg-orange-400 hover:text-slate-50 hover:border-orange-400">
+            <a href="tel:+919503698655">Call Us</a>
+          </button>
         </div>
       </div>
     </div>
