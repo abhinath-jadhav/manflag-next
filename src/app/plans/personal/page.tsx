@@ -3,9 +3,9 @@ import React from "react";
 
 const Personal = () => {
   return (
-    <div className="flex gap-5 items-center justify-center mt-[120px] lg:h-screen lg:mt-0">
+    <div className="flex gap-5 items-center justify-center mt-[120px] lg:h-screen lg:mt-0 mb-4 lg:mb-0">
       <div className="text-center">
-        <h1 className="text-5xl font-semibold">Packages : Personal</h1>
+        <h1 className="text-2xl lg:text-4xl">Packages : Personal training</h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3">
           <PriceCard
