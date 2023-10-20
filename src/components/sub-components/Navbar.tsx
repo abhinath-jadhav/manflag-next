@@ -8,8 +8,8 @@ const Navbar = () => {
   const navMenu = [
     { name: "Home", ref: "/" },
     { name: "Plans", ref: "/plans" },
-    { name: "Trainers", ref: "/trainers" },
-    { name: "About us", ref: "/about" },
+    // { name: "Trainers", ref: "/trainers" },
+    // { name: "About us", ref: "/about" },
     { name: "Contact us", ref: "/contact" },
   ];
 

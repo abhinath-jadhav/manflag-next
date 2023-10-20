@@ -8,7 +8,12 @@ const PriceCard = ({
   title: string;
   price: number;
   monthlyPrice: number;
+
 }) => {
+
+  
+
+
   return (
     <div className="border-2 rounded-lg p-4 mt-5 mx-2 w-[300px] lg:w-[350px] bg-slate-950 bg-opacity-60">
       <div className="flex flex-col gap-2">
