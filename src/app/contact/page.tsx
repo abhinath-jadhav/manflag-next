@@ -1,24 +1,10 @@
 "use client";
 
-import React from "react";
-import Img from "../../assets/contact.avif";
+import React, { useState } from "react";
+import Img from "../../assets/contact.png";
 import { Container, Navbar } from "@/components";
 import Image from "next/image";
-
-const menuItems = [
-  {
-    name: "Home",
-    href: "#",
-  },
-  {
-    name: "About",
-    href: "#",
-  },
-  {
-    name: "Contact",
-    href: "#",
-  },
-];
+import { sendEmail } from "@/util/api.util";
 
 const locations = [
   {
@@ -27,9 +13,32 @@ const locations = [
     address: "Near Kusur bus stop, Kusrun, Karad, Satara",
   },
 ];
-
+const emptyForm = {
+  firstName: "",
+  lastname: "",
+  email: "",
+  contact: "",
+  message: "",
+};
 export default function ContactPage() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [formData, setformData] = useState(emptyForm);
+
+  const handleFormSubmit = async (event: any) => {
+    event.preventDefault();
+    sendEmail(formData);
+  };
+
+  const handleChange = (e: React.ChangeEvent<any>) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setformData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -62,6 +71,9 @@ export default function ContactPage() {
                           First Name
                         </label>
                         <input
+                          onChange={handleChange}
+                          value={formData.firstName}
+                          name="firstName"
                           className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                           type="text"
                           id="first_name"
@@ -76,6 +88,9 @@ export default function ContactPage() {
                           Last Name
                         </label>
                         <input
+                          onChange={handleChange}
+                          name="lastname"
+                          value={formData.lastname}
                           className="flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                           type="text"
                           id="last_name"
@@ -91,6 +106,9 @@ export default function ContactPage() {
                         Email
                       </label>
                       <input
+                        onChange={handleChange}
+                        name="email"
+                        value={formData.email}
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                         type="text"
                         id="email"
@@ -105,8 +123,13 @@ export default function ContactPage() {
                         Phone number
                       </label>
                       <input
+                        onChange={(e) => {
+                          handleChange(e);
+                        }}
+                        value={formData.contact}
+                        name="contact"
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                        type="tel"
+                        type="telephone"
                         id="phone_number"
                         placeholder="Phone number"
                       />
@@ -119,6 +142,11 @@ export default function ContactPage() {
                         Message
                       </label>
                       <textarea
+                        onChange={(e) => {
+                          handleChange(e);
+                        }}
+                        name="message"
+                        value={formData.message}
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                         id="message"
                         placeholder="Leave us a message"
@@ -126,8 +154,9 @@ export default function ContactPage() {
                       />
                     </div>
                     <button
+                      onClick={handleFormSubmit}
                       type="button"
-                      className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                      className="w-full rounded-md bg-orange-400 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     >
                       Send Message
                     </button>

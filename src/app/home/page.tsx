@@ -1,5 +1,5 @@
 import { Container } from "@/components";
-import backroundImg from "../../assets/hero.jpg";
+import backroundImg from "../../assets/hero1.jpg";
 
 const Home = () => {
   return (
