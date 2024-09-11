@@ -27,7 +27,8 @@ export default function ContactPage() {
 
   const handleFormSubmit = async (event: any) => {
     event.preventDefault();
-    sendEmail(formData);
+    await sendEmail(formData);
+    setformData(emptyForm);
   };
 
   const handleChange = (e: React.ChangeEvent<any>) => {
