@@ -56,9 +56,9 @@ const sendEmail = async (to: string, subject: string, text: string) => {
       Please check the details below and the attached CV.<br><br>
       <strong>Contact:</strong> 9503698655<br>
         <strong>Email:</strong> abhinath.jadhav@gmail.com<br>
-        <strong>EXP:</strong> 6 years<br>
+        <strong>EXP:</strong> 5 years<br>
         <strong>LWD:</strong> 29th Oct<br>
-        <strong>Tech Skills:</strong> Java, Spring Boot, microservices, React, JavaScript, AWS, Kafka<br>
+        <strong>Tech Skills:</strong> Java, Spring Boot, microservices, React, JavaScript, AWS, Kafka<br><br>
 
         Thanks and regards,<br>
         Abhinath Jadhav`,
