@@ -5,9 +5,22 @@ export const sendEmail = async (data: FormData) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      to: "abhinath.jadhav18@gmail.com",
-      subject: "Test",
-      text: `Name : ${data.firstName} ${data.lastname} \nContact: ${data.contact} \nEmail: ${data.email} \nMessage: ${data.message}`,
+      to: data.email,
+      subject: "Application for JAVA developer | Abhinath Jadhav",
+      text:   "Hello,\n
+              I hope this email finds you well.\n
+              I am writing to express my interest in java developer role.\n
+              Please check the details below and the attached CV.\n
+              
+              Contact: 9503698655\n
+              EXP: 6 year\n
+              LWD: 29th Oct\n
+              Tech Skills: Java, Springboot, microservices, React, Javascript, AWS, Kafka\n
+              CTC: 18LPA\n
+              ECTC: 23LPA\n
+              
+              Thanks and regards\n
+              Abhinath Jadhav"
     }),
   });
 
